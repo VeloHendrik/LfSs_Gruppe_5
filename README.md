@@ -1,2 +1,3 @@
-# LfSs_Gruppe_5
-Lösungsverfahren für Strategiespiele Gruppe 5
+# Hex-Game
+
+This implementation of hex acts as a base code for assignments in the module "Solution methods for strategy games".
