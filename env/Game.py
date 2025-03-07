@@ -166,6 +166,6 @@ class Game:
         self.quitButton.draw()
 
     def drawTHMLogo(self):
-        logo = pygame.image.load("../images/logo.png")
+        logo = pygame.image.load("./images/logo.png")
         scaled_logo = pygame.transform.scale(logo, (210, 70))
         self.display.blit(scaled_logo, (20, self.screenSize[1]-90))

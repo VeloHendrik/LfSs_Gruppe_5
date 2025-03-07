@@ -4,13 +4,13 @@ import sys
 import startPage
 from Game import Game
 #from agents.random_agent import make_random_move
-from agents.minimax_agent import make_minimax_move
-
+#from agents.minimax_agent import MinimaxAgent
+from agents.mcts_agent import MCTSAgent
 
 if __name__ == '__main__':
     pygame.init()
 
-    icon = pygame.image.load('../images/hex.png')
+    icon = pygame.image.load('./images/hex.png')
     pygame.display.set_caption("Hex Game")
     pygame.display.set_icon(icon)
 
@@ -33,7 +33,8 @@ if __name__ == '__main__':
         # HUMAN VS AI (Blue ist KI)
         if gameMode == "human_ai" and hexgame.current_player == "blue":
             pygame.time.delay(500)
-            move = make_minimax_move(hexgame, 2)
+            agent = MCTSAgent(simulations=20)
+            move = agent.make_move(hexgame)
             if move:
                 x, y = move
                 tile = hexgame.grid.tiles[(x, y)]
