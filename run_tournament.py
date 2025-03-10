@@ -1,13 +1,16 @@
+# tournament.py
 from Game import Game
 from agents.random_agent import make_random_move
 from agents.minimax_agent import make_minimax_move
 from agents.mcts_agent import make_mcts_move
 
-def play_match(agent_red, agent_blue, depth_red=2, depth_blue=2, simulations_red=100, simulations_blue=100):
+def play_match(agent_red, agent_blue, depth_red=2, depth_blue=2, simulations_red=100, simulations_blue=100, time_limit=300):
     game = Game()
     game.current_player = 'red'
     max_moves = game.NUM_ROWS * game.NUM_COLS
-
+    # Initialisiere Timer für beide Spieler (in Sekunden)
+    game.timers = {'red': time_limit, 'blue': time_limit}
+    
     for _ in range(max_moves):
         if game.current_player == 'red':
             if agent_red == make_random_move:
@@ -28,11 +31,14 @@ def play_match(agent_red, agent_blue, depth_red=2, depth_blue=2, simulations_red
             x, y = move
             game.matrix[y][x] = game.current_player.upper()[0]
             game.num_emptyTiles -= 1
+            # Simuliere den Zeitverbrauch pro Zug (hier 1 Sekunde)
+            game.timers[game.current_player] -= 1
+            if game.timers[game.current_player] <= 0:
+                # Aktueller Spieler hat keine Zeit mehr – Gegner gewinnt
+                return 'red' if game.current_player == 'blue' else 'blue'
         else:
-            # kein Zug mehr möglich
             return 'draw'
 
-        # Einfache Spielendeprüfung
         if game.findSolutionPath() is not None:
             return game.current_player
 
@@ -41,7 +47,7 @@ def play_match(agent_red, agent_blue, depth_red=2, depth_blue=2, simulations_red
     return "draw"
 
 def main():
-    matches_per_pair = 5  # starte mit wenig Matches zum Testen
+    matches_per_pair = 5  # Beispielweise wenige Matches zum Testen
     results = []
 
     agent_dict = {
@@ -56,12 +62,15 @@ def main():
         ('Minimax_depth2', 'MCTS'),
     ]
 
+    # Setze ein Zeitlimit für jeden Spieler (z. B. 300 Sekunden)
+    time_limit = 300
+
     for agent1, agent2 in pairings:
         agent_red = agent_dict[agent1]
         agent_blue = agent_dict[agent2]
 
         for match_num in range(matches_per_pair):
-            winner = play_match(agent_red, agent_blue)
+            winner = play_match(agent_red, agent_blue, time_limit=time_limit)
             result_str = f"{agent1} (red) vs {agent2} (blue) | Winner: {winner}"
             print(result_str)
             results.append(result_str)
