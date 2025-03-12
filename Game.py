@@ -1,4 +1,3 @@
-# Game.py
 import consts
 import pygame
 import sys
@@ -31,8 +30,14 @@ class Game:
         self.text = "Red's turn"
         self.solution = None
         self.quitButton = None
-        # Timer wird später gesetzt (kann float('inf') sein für "No Limit")
+        # Timer wird später gesetzt (kann float('inf') sein, wenn "No Limit" gewählt wurde)
         self.timers = {'red': 0, 'blue': 0}
+        # Neuer EloManager kann hier zugewiesen werden (z. B. über main.py)
+        self.elo_manager = None
+        # Neues Attribut, um zu steuern, ob Elo-Werte angezeigt werden sollen
+        self.show_elo = False
+        # Attribut für den zuletzt ausgeführten Zug (zum Hervorheben)
+        self.last_move = None
 
     @classmethod
     def initialiseGame(cls, display, game):
@@ -90,7 +95,6 @@ class Game:
         self.display.blit(renderedText, rectangleText)
 
     def drawTimers(self):
-        # Falls beide Timer unendlich sind, wird nichts angezeigt.
         if self.timers['red'] == float('inf') and self.timers['blue'] == float('inf'):
             return
         fontObj = pygame.font.SysFont('arial', 30)
@@ -100,6 +104,16 @@ class Game:
         blue_text = fontObj.render(f"Blue: {blue_time}s", True, self.playerColours['blue'])
         self.display.blit(red_text, (20, 20))
         self.display.blit(blue_text, (20, 20 + red_text.get_height() + 5))
+
+    def drawElo(self):
+        if not self.elo_manager:
+            return
+        font = pygame.font.SysFont('arial', 30)
+        ratings = self.elo_manager.get_ratings()
+        red_text = font.render(f"Red Elo: {ratings['red']:.0f}", True, self.playerColours['red'])
+        blue_text = font.render(f"Blue Elo: {ratings['blue']:.0f}", True, self.playerColours['blue'])
+        self.display.blit(red_text, (20, 140))
+        self.display.blit(blue_text, (20, 170))
 
     def drawTile(self, tile):
         corners = tile.cornerPoints(self.boardPosition)
@@ -113,8 +127,17 @@ class Game:
         self.display.fill(self.backgroundColor)
         for tile in self.hexTiles():
             self.drawTile(tile)
+        
+        # Letzten Zug hervorheben, falls vorhanden
+        if self.last_move is not None:
+            tile = self.grid.tiles[self.last_move]
+            corners = tile.cornerPoints(self.boardPosition)
+            pygame.draw.polygon(self.display, (0, 255, 0), corners, 8)
+        
         self.showText()
         self.drawTimers()
+        if self.show_elo:
+            self.drawElo()
         self.drawBorder()
         self.drawQuitButton()
         self.drawTHMLogo()
@@ -152,7 +175,6 @@ class Game:
             fontDimension=26,
             textColor=consts.WHITE
         )
-        # Runde Ecken: 12 Pixel an allen Ecken
         self.quitButton.draw(12, 12, 12, 12)
 
     def drawTHMLogo(self):

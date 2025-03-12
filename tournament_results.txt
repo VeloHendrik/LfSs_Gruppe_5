@@ -1,40 +1,15 @@
-Random vs Minimax_depth2: Winner=draw
-Random vs Minimax_depth2: Winner=draw
-Random vs Minimax_depth2: Winner=draw
-Random vs Minimax_depth2: Winner=draw
-Random vs Minimax_depth2: Winner=draw
-Random vs Minimax_depth2: Winner=draw
-Random vs Minimax_depth2: Winner=draw
-Random vs Minimax_depth2: Winner=draw
-Random vs Minimax_depth2: Winner=draw
-Random vs Minimax_depth2: Winner=draw
-Random vs Minimax_depth2: Winner=draw
-Random vs Minimax_depth2: Winner=draw
-Random vs Minimax_depth2: Winner=draw
-Random vs Minimax_depth2: Winner=draw
-Random vs Minimax_depth2: Winner=draw
-Random vs Minimax_depth2: Winner=draw
-Random vs Minimax_depth2: Winner=draw
-Random vs Minimax_depth2: Winner=draw
-Random vs Minimax_depth2: Winner=draw
-Random vs Minimax_depth2: Winner=draw
-Minimax_depth2 vs Random: Winner=draw
-Minimax_depth2 vs Random: Winner=draw
-Minimax_depth2 vs Random: Winner=draw
-Minimax_depth2 vs Random: Winner=draw
-Minimax_depth2 vs Random: Winner=draw
-Minimax_depth2 vs Random: Winner=draw
-Minimax_depth2 vs Random: Winner=draw
-Minimax_depth2 vs Random: Winner=draw
-Minimax_depth2 vs Random: Winner=draw
-Minimax_depth2 vs Random: Winner=draw
-Minimax_depth2 vs Random: Winner=draw
-Minimax_depth2 vs Random: Winner=draw
-Minimax_depth2 vs Random: Winner=draw
-Minimax_depth2 vs Random: Winner=draw
-Minimax_depth2 vs Random: Winner=draw
-Minimax_depth2 vs Random: Winner=draw
-Minimax_depth2 vs Random: Winner=draw
-Minimax_depth2 vs Random: Winner=draw
-Minimax_depth2 vs Random: Winner=draw
-Minimax_depth2 vs Random: Winner=draw
+Random (red) vs MCTS (blue) | Winner: red
+Random (red) vs MCTS (blue) | Winner: red
+Random (red) vs MCTS (blue) | Winner: blue
+Random (red) vs MCTS (blue) | Winner: blue
+Random (red) vs MCTS (blue) | Winner: blue
+Random (red) vs Minimax_depth2 (blue) | Winner: blue
+Random (red) vs Minimax_depth2 (blue) | Winner: blue
+Random (red) vs Minimax_depth2 (blue) | Winner: blue
+Random (red) vs Minimax_depth2 (blue) | Winner: blue
+Random (red) vs Minimax_depth2 (blue) | Winner: blue
+Minimax_depth2 (red) vs MCTS (blue) | Winner: red
+Minimax_depth2 (red) vs MCTS (blue) | Winner: red
+Minimax_depth2 (red) vs MCTS (blue) | Winner: red
+Minimax_depth2 (red) vs MCTS (blue) | Winner: red
+Minimax_depth2 (red) vs MCTS (blue) | Winner: red

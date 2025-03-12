@@ -1,11 +1,10 @@
-# main.py
 import consts
 import pygame
 import sys
 import startPage
 from Game import Game
-from agents.mcts_agent import MCTSAgent
-from Buttons import Button  # Für den Restart-Button
+from agents.minimax_agent import MinimaxAgent
+from Buttons import Button  # Für den Restart-Button und Toggle Elo
 
 def main():
     pygame.init()
@@ -26,12 +25,26 @@ def main():
         # Setze beide Timer auf das gewählte Zeitlimit (in Sekunden)
         hexgame.timers = {'red': time_limit, 'blue': time_limit}
         hexgame.current_player = startPlayer
+        # Standardmäßig keine Elo-Anzeige
+        hexgame.show_elo = False
         hexgame.drawBoard()
         pygame.display.update()
         
         # Jetzt initialisieren wir den Clock neu – ab hier läuft die eigentliche Spielzeit.
         clock = pygame.time.Clock()
         hexgame.running = True
+        
+        # Neuer Toggle-Elo-Button (Position: unten links)
+        toggleEloButton = Button(
+            display=display,
+            pos=[20, hexgame.screenSize[1] - 150],
+            w=150,
+            h=50,
+            text="Toggle Elo",
+            bgColor=consts.THM_COLOR,
+            selectedBgColor=consts.THM_LIGHT_COLOR,
+            textColor=consts.WHITE
+        )
         
         while hexgame.running:
             dt = clock.tick(30) / 1000.0  # dt in Sekunden
@@ -50,11 +63,14 @@ def main():
                     sys.exit()
                 elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                     mouse_pos = pygame.mouse.get_pos()
-                    # Prüfe den integrierten Quit-Button (wird in hexgame.drawQuitButton gezeichnet)
+                    # Prüfe zunächst den integrierten Quit-Button
                     if hexgame.quitButton.selectByCoord(mouse_pos):
                         pygame.quit()
                         sys.exit()
-                    # Im Human-vs-Human-Modus oder im Human-vs-AI-Modus, wenn "red" (Mensch) an der Reihe ist:
+                    # Prüfe den Toggle-Elo-Button
+                    if toggleEloButton.selectByCoord(mouse_pos):
+                        hexgame.show_elo = not hexgame.show_elo
+                    # Im Human-vs-Human-Modus oder im Human-vs-AI-Modus, wenn "red" (Mensch) am Zug ist:
                     if gameMode == "human_human" or (gameMode == "human_ai" and hexgame.current_player == "red"):
                         tile = hexgame.getNearestTile(mouse_pos)
                         x, y = tile.gridPosition
@@ -64,7 +80,7 @@ def main():
             # KI-Zug im Human-vs-AI-Modus
             if gameMode == "human_ai" and hexgame.current_player == "blue":
                 pygame.time.delay(500)
-                agent = MCTSAgent(simulations=20)
+                agent = MinimaxAgent() 
                 move = agent.make_move(hexgame)
                 if move:
                     hexgame.human_move = move
@@ -78,6 +94,9 @@ def main():
                     hexgame.grid.visitedTiles[tile.gridPosition] = 1
                     hexgame.num_emptyTiles -= 1
 
+                    # Letzten Zug speichern (wird in drawBoard hervorgehoben)
+                    hexgame.last_move = (x, y)
+
                     if hexgame.isGameOver():
                         hexgame.text = 'Game over! {} wins!'.format(hexgame.current_player.capitalize())
                         hexgame.running = False
@@ -87,14 +106,14 @@ def main():
                 del hexgame.human_move
 
             hexgame.drawBoard()
+            # Zeichne den Toggle-Elo-Button zusätzlich
+            toggleEloButton.draw(12, 12, 12, 12)
             pygame.display.update()
         
         # Nach Spielende: Endbildschirm mit Restart-Button (Quit-Button bleibt integriert)
-        # Der Quit-Button wird in hexgame.drawQuitButton() (z. B. oben rechts) gezeichnet.
-        # Wir erstellen einen Restart-Button, der direkt unter dem Quit-Button angezeigt wird.
         restartButton = Button(
             display=display,
-            pos=[hexgame.screenSize[0] - 150 - 20, 20 + 50 + 10],  # direkt unter Quit-Button
+            pos=[hexgame.screenSize[0] - 150 - 20, 20 + 50 + 10],  # direkt unter dem Quit-Button
             w=150,
             h=50,
             text="Restart",
@@ -103,7 +122,6 @@ def main():
             textColor=consts.WHITE
         )
         
-        # End-Schleife: Hier wird der Bildschirm (inklusive Quit-Button) neu gezeichnet und zusätzlich der Restart-Button angezeigt.
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -117,7 +135,7 @@ def main():
                     if restartButton.selectByCoord(mouse_pos):
                         restartButton.selected = True
                         break
-            hexgame.drawBoard()  # Zeichnet u.a. auch den integrierten Quit-Button
+            hexgame.drawBoard()  # Zeichnet auch den integrierten Quit-Button
             restartButton.draw(12, 12, 12, 12)
             pygame.display.update()
             clock.tick(30)
