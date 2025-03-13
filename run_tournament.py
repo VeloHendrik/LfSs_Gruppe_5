@@ -69,7 +69,7 @@ def write_bayesian_result(agent1_name, agent2_name, winner, round_number=None):
         f.write(record)
 
 def main():
-    matches_per_pair = 5  # Beispiel: 5 Matches pro Paarung
+    matches_per_pair = 5  # 5 Matches pro Paarung
     results = []
     game_counter = 1  # Zähler für die Rundennummer
     
@@ -81,9 +81,9 @@ def main():
     }
     
     pairings = [
+        ('Minimax_depth2', 'MCTS'),
         ('Random', 'MCTS'),
         ('Random', 'Minimax_depth2'),
-        ('Minimax_depth2', 'MCTS'),
     ]
     
     time_limit = 3000000000  # Sekunden pro Spieler

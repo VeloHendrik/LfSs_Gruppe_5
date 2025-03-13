@@ -4,6 +4,7 @@ import sys
 import startPage
 from Game import Game
 from agents.minimax_agent import MinimaxAgent
+from agents.mcts_agent import MCTSAgent
 from Buttons import Button  # Für den Restart-Button und Toggle Elo
 
 def main():
