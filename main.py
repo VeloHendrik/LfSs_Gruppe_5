@@ -5,6 +5,7 @@ import startPage
 from Game import Game
 from agents.minimax_agent import MinimaxAgent
 from agents.mcts_agent import MCTSAgent
+from agents.random_agent import random
 from Buttons import Button  # Für den Restart-Button und Toggle Elo
 
 def main():
@@ -22,7 +23,15 @@ def main():
         display.fill(consts.BACKGROUND_COLOR)
         
         # Starte die Startseite; erst wenn "Start" gedrückt wird, kehrt sie zurück.
-        startPlayer, gameMode, time_limit = startPage.homePage(hexgame, display)
+        result = startPage.homePage(hexgame, display)
+        startPlayer = result[0]
+        gameMode = result[1]
+        time_limit = result[2]
+        if gameMode == "human_ai":
+            ai_opponent = result[3]
+        else:
+            ai_opponent = None
+
         # Setze beide Timer auf das gewählte Zeitlimit (in Sekunden)
         hexgame.timers = {'red': time_limit, 'blue': time_limit}
         hexgame.current_player = startPlayer
@@ -81,7 +90,14 @@ def main():
             # KI-Zug im Human-vs-AI-Modus
             if gameMode == "human_ai" and hexgame.current_player == "blue":
                 pygame.time.delay(500)
-                agent = MinimaxAgent() 
+                if ai_opponent == "minimax":
+                    agent = MinimaxAgent()
+                elif ai_opponent == "mcts":
+                    agent = MCTSAgent()
+                elif ai_opponent == "random":
+                    agent = random()
+                else:
+                    agent = MinimaxAgent()  # Fallback
                 move = agent.make_move(hexgame)
                 if move:
                     hexgame.human_move = move
