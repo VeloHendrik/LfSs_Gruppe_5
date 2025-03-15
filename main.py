@@ -47,10 +47,10 @@ def main():
         # Neuer Toggle-Elo-Button (Position: unten links)
         toggleEloButton = Button(
             display=display,
-            pos=[20, hexgame.screenSize[1] - 150],
-            w=150,
+           pos=[20, hexgame.screenSize[1] - 200],
+            w=200,
             h=50,
-            text="Toggle Elo",
+            text="(geht noch nicht)",
             bgColor=consts.THM_COLOR,
             selectedBgColor=consts.THM_LIGHT_COLOR,
             textColor=consts.WHITE

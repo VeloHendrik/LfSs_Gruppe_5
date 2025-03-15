@@ -898,3 +898,323 @@
 
 1. K2 2. B5 3. C11 4. J1 5. D2 6. C1 7. I3 8. A5 9. J4 10. A7 11. A2 12. G6 13. K5 14. K4 15. I7 16. A1 17. H8 18. B8 19. I2 20. C5 21. K1 22. K11 23. G11 24. H9 25. D1 26. G10 27. F10 28. G1 29. H6 30. D6 31. K7 32. B6 33. C7 34. I9 35. F11 36. I4 37. B2 38. E5 39. H4 40. D7 41. F6 42. C10 43. G7 44. D8 45. F3 46. B3 47. G3 48. G2 49. I8 50. D3 51. F5 52. D9 53. E3 54. H3 55. H1 56. E10 57. J6 58. E7 59. D4 60. C8 61. G4 62. H10 63. E8 64. D11 65. D5 66. F2 67. J9 68. G9 69. K6 70. B10 71. K3 72. F4 73. G8 74. B9 75. K10 76. E2 77. A11 78. E6 79. I11 80. A3 81. B11 82. K9 83. A6 84. A9 85. B7 86. I5 87. J2 88. E11 89. J5 90. A8 91. E9 92. J3 93. I10 94. J11 95. G5 96. C3 97. H2 98. C2 99. B4 100. C9 101. C6 102. I6 103. J10 104. K8 105. H7 106. F9 107. D10 108. A4 109. A10 110. E4 111. J7 112. C4 113. H5 114. I1 115. H11 116. E1 117. F7
 
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "1"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. H5 2. K1 3. C10 4. J1 5. E5 6. I1 7. K6 8. H1 9. F11 10. G1 11. E9 12. F1 13. C1 14. E1 15. B8 16. C2 17. G8 18. B2 19. F8 20. D1 21. I2 22. A2
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "2"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. G10 2. K1 3. A6 4. J1 5. H11 6. I1 7. E5 8. H1 9. E4 10. G1 11. D6 12. F1 13. I5 14. E1 15. G6 16. D1 17. B1 18. B2 19. C3 20. C1 21. A5 22. A2
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "3"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. K9 2. K1 3. F6 4. J1 5. D6 6. I1 7. A5 8. H1 9. E6 10. G1 11. G7 12. F1 13. H3 14. E1 15. A4 16. D1 17. D7 18. C1 19. I6 20. B1 21. H8 22. A1
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "4"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. G10 2. K1 3. K9 4. J1 5. H11 6. I1 7. B8 8. H1 9. F1 10. F2 11. D2 12. G1 13. F7 14. D3 15. K6 16. E2 17. I5 18. C3 19. E5 20. B3 21. C11 22. A3
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "5"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. H11 2. K1 3. D11 4. J1 5. E3 6. G1 7. B3 8. F1 9. K11 10. E1 11. K10 12. A1 13. J10 14. B1 15. C1 16. H1 17. C11 18. I1 19. D2 20. C2 21. H8 22. D1 23. B7 24. B2
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "6"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. J2 2. A3 3. I1 4. B3 5. D7 6. I2 7. B10 8. H2 9. B5 10. C2 11. K5 12. D2 13. A4 14. E2 15. K1 16. I3 17. A8 18. F2 19. A5 20. G2 21. E7 22. J3 23. H7 24. K2
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "7"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. D10 2. K1 3. I9 4. J1 5. F2 6. H1 7. D8 8. I1 9. C1 10. A3 11. E7 12. B3 13. E9 14. C3 15. F3 16. D3 17. K6 18. G2 19. E11 20. E3 21. A4 22. F1 23. B9 24. G1 25. D2 26. E2
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "8"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. A6 2. A7 3. A11 4. K1 5. F6 6. J1 7. A1 8. I1 9. C9 10. H1 11. H9 12. F2 13. E1 14. G1 15. J9 16. E3 17. H5 18. D4 19. J4 20. C5 21. G9 22. B6
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "9"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. C2 2. E1 3. D6 4. A1 5. H6 6. F1 7. B3 8. G1 9. H2 10. B1 11. I9 12. J1 13. G10 14. C1 15. J10 16. D1 17. F11 18. H3 19. B7 20. K1 21. J8 22. G2 23. G5 24. G3 25. H9 26. I2
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "10"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. B11 2. K1 3. C10 4. J1 5. G1 6. I1 7. D10 8. G2 9. J3 10. F2 11. E3 12. E2 13. K4 14. H1 15. H9 16. D2 17. C7 18. C2 19. D4 20. B2 21. A9 22. A2
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "11"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. E10 2. K1 3. D4 4. J1 5. D2 6. D3 7. K4 8. I1 9. F5 10. H1 11. C2 12. G1 13. I10 14. F2 15. I6 16. E2 17. F6 18. C3 19. E6 20. B3 21. I3 22. A3
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "12"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. B5 2. F1 3. J5 4. A1 5. B8 6. B1 7. G4 8. C1 9. J9 10. D1 11. I2 12. E1 13. A10 14. H3 15. J11 16. G1 17. D8 18. H1 19. C5 20. K1 21. B2 22. J6 23. A9 24. A11 25. K9 26. H2 27. A5 28. I1 29. J7 30. J1
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "13"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. C8 2. J1 3. F5 4. I1 5. B7 6. H1 7. A1 8. G1 9. J10 10. F1 11. E1 12. E2 13. J8 14. K1 15. E6 16. D2 17. D11 18. C2 19. F11 20. B2 21. D5 22. A2
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "14"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. F6 2. K1 3. E11 4. J1 5. B6 6. I1 7. F10 8. H1 9. H4 10. G1 11. A1 12. F1 13. J8 14. E1 15. D2 16. D1 17. C5 18. C1 19. I4 20. A2 21. D7 22. B1
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "15"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. E3 2. G1 3. I11 4. A1 5. G7 6. B1 7. D7 8. C1 9. K7 10. D1 11. K11 12. E1 13. G8 14. F1 15. A3 16. H1 17. K1 18. I1 19. K4 20. K2 21. J3 22. J2 23. C8 24. J1
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "16"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. G3 2. I1 3. A2 4. H1 5. F4 6. G1 7. E3 8. J1 9. F3 10. F1 11. D11 12. E1 13. G8 14. K1 15. H7 16. D1 17. K3 18. C1 19. I5 20. A3 21. F11 22. B2
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "17"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. K5 2. K1 3. B5 4. F1 5. D4 6. G1 7. J1 8. J2 9. K7 10. I2 11. H1 12. G2 13. I6 14. H2 15. J7 16. E1 17. H8 18. D1 19. G6 20. C1 21. C9 22. B1 23. G5 24. A1
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "18"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. G4 2. J1 3. B4 4. I1 5. C9 6. H1 7. I11 8. G1 9. B8 10. B5 11. C10 12. K1 13. D1 14. F2 15. D6 16. D3 17. J11 18. C4 19. E11 20. E2 21. J5 22. A5
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "19"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. B3 2. D1 3. F5 4. A1 5. K10 6. B1 7. I4 8. C1 9. K6 10. K1 11. K8 12. E1 13. J3 14. J1 15. F11 16. F1 17. B9 18. G1 19. J8 20. H1 21. D9 22. I1
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "20"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. F8 2. K1 3. C10 4. J1 5. H5 6. I1 7. H9 8. H1 9. A2 10. G1 11. B4 12. F1 13. C5 14. E1 15. H8 16. D1 17. F6 18. C1 19. J2 20. C6 21. E3 22. A1 23. D7 24. B1
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "21"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. H11 2. K1 3. K5 4. J1 5. H9 6. I1 7. D11 8. H1 9. E2 10. G1 11. J11 12. A3 13. C2 14. B3 15. E3 16. C3 17. J9 18. F2 19. K11 20. D3 21. G2 22. E1 23. G7 24. F1 25. I8 26. D2
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "22"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. D8 2. K1 3. F9 4. J1 5. H9 6. I1 7. I7 8. H1 9. G3 10. G1 11. E5 12. F1 13. I6 14. E1 15. B1 16. D1 17. A6 18. B2 19. K5 20. A2 21. D4 22. C1
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "23"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. A9 2. A10 3. A3 4. B9 5. J5 6. K1 7. E7 8. E6 9. A2 10. J2 11. I11 12. I3 13. B8 14. C8 15. I2 16. H3 17. E8 18. G4 19. F10 20. F5 21. J9 22. D7
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "24"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. D11 2. K1 3. E6 4. J1 5. C9 6. I1 7. H6 8. H1 9. D5 10. G1 11. H7 12. F1 13. J8 14. E1 15. B10 16. D1 17. B1 18. B2 19. H9 20. C1 21. F6 22. A2
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "25"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. G6 2. K1 3. J6 4. J1 5. B6 6. I1 7. H4 8. H1 9. J3 10. G1 11. J10 12. F1 13. G11 14. E1 15. G5 16. D1 17. F8 18. C1 19. C9 20. B1 21. F10 22. A1
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "26"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. C1 2. E1 3. G6 4. D1 5. F11 6. F1 7. F9 8. G1 9. D4 10. H1 11. K3 12. I1 13. E9 14. J1 15. G5 16. K1 17. K4 18. C2 19. K2 20. B2 21. E6 22. A2
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "27"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. I5 2. K1 3. E11 4. J1 5. B11 6. I1 7. I7 8. H1 9. K11 10. G1 11. C1 12. E1 13. E5 14. F1 15. B1 16. C2 17. K2 18. B2 19. F6 20. D1 21. D8 22. A2
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "28"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. K2 2. K1 3. G9 4. J1 5. F1 6. I1 7. G11 8. H1 9. C7 10. F2 11. F6 12. G1 13. C11 14. E2 15. H2 16. D2 17. D8 18. C2 19. D7 20. B2 21. K8 22. A2
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "29"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. K11 2. K1 3. I10 4. J1 5. B1 6. I1 7. H6 8. H1 9. I6 10. G1 11. E3 12. F1 13. A8 14. E1 15. A6 16. D1 17. H7 18. B2 19. K3 20. A2 21. B4 22. C1
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "30"]
+[White "Random"]
+[Black "Minimax_depth2"]
+[Result "0-1"]
+
+1. K8 2. K1 3. E3 4. G1 5. H8 6. A1 7. K4 8. B1 9. C5 10. C1 11. F7 12. D1 13. I2 14. E1 15. J3 16. F1 17. B3 18. H1 19. G11 20. H2 21. H9 22. J2 23. I9 24. I1 25. C3 26. J1
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "31"]
+[White "Minimax_depth2"]
+[Black "MCTS"]
+[Result "1-0"]
+
+1. B1 2. F6 3. B2 4. D1 5. B3 6. C7 7. B4 8. I1 9. B5 10. K9 11. B6 12. F9 13. B7 14. H9 15. B8 16. D11 17. A11 18. K8 19. B9 20. C1 21. A10
+
+[Event "Hex Tournament"]
+[Site "Local"]
+[Date "2025.03.14"]
+[Round "32"]
+[White "Minimax_depth2"]
+[Black "MCTS"]
+[Result "1-0"]
+
+1. B1 2. K8 3. B2 4. G3 5. B3 6. G2 7. B4 8. E1 9. B5 10. E2 11. B6 12. G1 13. B7 14. J3 15. B8 16. B11 17. A11 18. H4 19. B9 20. H10 21. A10
+
