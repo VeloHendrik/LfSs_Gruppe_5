@@ -30,13 +30,9 @@ class Game:
         self.text = "Red's turn"
         self.solution = None
         self.quitButton = None
-        # Timer wird später gesetzt (kann float('inf') sein, wenn "No Limit" gewählt wurde)
         self.timers = {'red': 0, 'blue': 0}
-        # Neuer EloManager kann hier zugewiesen werden (z. B. über main.py)
         self.elo_manager = None
-        # Neues Attribut, um zu steuern, ob Elo-Werte angezeigt werden sollen
         self.show_elo = False
-        # Attribut für den zuletzt ausgeführten Zug (zum Hervorheben)
         self.last_move = None
 
     @classmethod

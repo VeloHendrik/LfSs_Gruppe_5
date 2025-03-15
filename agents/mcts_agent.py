@@ -5,8 +5,8 @@ from agents.hex_state import HexState, evaluate_state
 
 class Node:
     def __init__(self, state, move=None, parent=None):
-        self.state = state        # Instanz von HexState
-        self.move = move          # Der Zug, der zu diesem Zustand geführt hat
+        self.state = state       
+        self.move = move          
         self.parent = parent
         self.children = []
         self.visits = 0
@@ -17,8 +17,7 @@ class Node:
 
     def best_child(self, c_param=1.0, player=None):
         """
-        Wählt das Kind mit dem höchsten UCB1-Wert plus einem progressive bias,
-        der aus der statischen Bewertung abgeleitet wird.
+        Wählt das Kind mit dem höchsten UCB1-Wert plus einem progressive bias.
         """
         choices = []
         for child in self.children:
@@ -58,7 +57,7 @@ class MCTSAgent:
         """
         root_state = HexState(game.matrix, game.current_player, game.num_emptyTiles, game.NUM_ROWS, game.NUM_COLS)
         root_node = Node(root_state)
-        player = game.current_player  # Spieler, für den der Zug berechnet wird
+        player = game.current_player 
 
         if self.time_limit is not None:
             end_time = time.time() + self.time_limit
@@ -72,7 +71,7 @@ class MCTSAgent:
             best_child = max(root_node.children, key=lambda child: child.visits)
             return best_child.move
         else:
-            # Fallback: Wähle einen zufälligen Zug, wenn keine Erweiterung erfolgt ist.
+            # Fallback: Wähle einen zufälligen Zug
             possible_moves = root_state.get_possible_moves()
             return random.choice(possible_moves) if possible_moves else None
 
@@ -86,9 +85,9 @@ class MCTSAgent:
             child = node.expand()
             if child is not None:
                 node = child
-        # SIMULATION (Rollout) mit heuristikgestützter, epsilon-greedy Auswahl
+        # SIMULATION (Rollout) 
         result = self.rollout(node.state, player)
-        # BACKPROPAGATION: Ergebnisse zurück propagieren
+        # BACKPROPAGATION
         self.backpropagate(node, result, player)
 
     def rollout(self, state, player):

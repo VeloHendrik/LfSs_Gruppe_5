@@ -4,11 +4,6 @@ from Buttons import ButtonGroup, Button
 import consts
 
 def parse_time(input_str):
-    """
-    Wandelt einen String in Sekunden um.
-    Erlaubte Formate: mm:ss oder nur mm.
-    Liefert None bei ungültiger Eingabe.
-    """
     input_str = input_str.strip()
     if ':' in input_str:
         parts = input_str.split(':')
@@ -32,13 +27,11 @@ def parse_time(input_str):
             return None
 
 def homePage(game, display):
-    # Grundlayout-Parameter
     topMargin = 60
     spacing = 20
     buttonHeight = 50
     screenWidth, screenHeight = game.screenSize
 
-    # Titel und Instruktionen
     title_font = pygame.font.SysFont('arial', 50)
     title_text = "Welcome to Hex Game"
     title_surface = title_font.render(title_text, True, consts.WHITE)
@@ -47,11 +40,9 @@ def homePage(game, display):
     instr_text = "Please select your options:"
     instr_surface = instr_font.render(instr_text, True, consts.WHITE)
     
-    # Berechne Positionen
     title_y = topMargin
     instr_y = title_y + title_surface.get_height() + 10
     
-    # Spieler-Auswahlgruppe
     playerGroupY = instr_y + instr_surface.get_height() + spacing
     playerButtonWidth = 100
     player = ButtonGroup(
@@ -72,7 +63,7 @@ def homePage(game, display):
         selected=0
     )
     
-    # Spielmodus-Auswahlgruppe
+    # Spielmodus
     gametypeButtonWidth = 450
     gameTypeY = playerGroupY + buttonHeight + spacing
     gameType = ButtonGroup(
@@ -93,7 +84,7 @@ def homePage(game, display):
         selected=0
     )
     
-    # Zeitlimit-Auswahlgruppe (5 Buttons: "No Limit", "1:00", "3:00", "5:00" und "Custom")
+    # Zeitlimit ("No Limit", "1:00", "3:00", "5:00" und "Custom")
     timeButtonWidth = 100
     timeLimitLeft = screenWidth / 2 - (timeButtonWidth * 5 + 40) / 2
     timeLimitY = gameTypeY + buttonHeight + spacing
@@ -127,10 +118,9 @@ def homePage(game, display):
                    selectedBgColor=consts.WHITE,
                    textColor=consts.BLACK)
         ],
-        selected=0  # Default ist "No Limit"
+        selected=0  
     )
     
-    # Start- und Quit-Buttons (Positionen werden später dynamisch gesetzt)
     startButtonWidth = 110
     start = Button(display=display,
                    pos=[screenWidth / 2 - startButtonWidth / 2, timeLimitY + buttonHeight + spacing + 60],
@@ -146,7 +136,6 @@ def homePage(game, display):
                      textColor=consts.BLACK,
                      text="Quit")
     
-    # Initiales Zeichnen
     display.fill(consts.BACKGROUND_COLOR)
     display.blit(title_surface, (screenWidth / 2 - title_surface.get_width() / 2, title_y))
     display.blit(instr_surface, (screenWidth / 2 - instr_surface.get_width() / 2, instr_y))
@@ -156,14 +145,12 @@ def homePage(game, display):
     start.draw(12, 12, 12, 12)
     quitbtn.draw(12, 12, 12, 12)
     game.drawTHMLogo()
-    
-    # Variablen für Custom-Zeit-Eingabe
     custom_input_text = ""
     input_active = False
     error_message = ""
     custom_input_y = timeLimitY + buttonHeight + spacing + 10
 
-    aiSelection = None  # Für die Auswahl des KI-Gegners
+    aiSelection = None 
 
     clock = pygame.time.Clock()
     while True:
@@ -180,10 +167,8 @@ def homePage(game, display):
                 player.selectByCoord(pos)
                 gameType.selectByCoord(pos)
                 timeLimit.selectByCoord(pos)
-                # Wenn Human vs AI gewählt ist, auch KI-Auswahl berücksichtigen
                 if gameType.getValue() == "human_ai" and aiSelection is not None:
                     aiSelection.selectByCoord(pos)
-                # Aktiviere Eingabe, falls "Custom" gewählt wurde
                 if timeLimit.getValue() == "custom":
                     input_active = True
                 else:
@@ -203,7 +188,6 @@ def homePage(game, display):
                     else:
                         time_limit = val
                     if gameType.getValue() == "human_ai":
-                        # Stelle sicher, dass aiSelection existiert
                         if aiSelection is None:
                             error_message = "Please select an AI opponent!"
                             continue
@@ -223,22 +207,18 @@ def homePage(game, display):
                     if event.unicode.isdigit() or event.unicode == ":":
                         custom_input_text += event.unicode
         
-        # Aktualisiere dynamisch die Position der Start- und Quit-Buttons
         if gameType.getValue() == "human_ai":
             current_startY = timeLimitY + buttonHeight + spacing + buttonHeight + spacing + 60
         else:
             current_startY = timeLimitY + buttonHeight + spacing + 60
         start.pos = [screenWidth / 2 - startButtonWidth / 2, current_startY]
         quitbtn.pos = [screenWidth / 2 - startButtonWidth / 2, current_startY + buttonHeight + spacing]
-
-        # Falls "Custom" aktiv ist, zeichne das Eingabefeld
         display.fill(consts.BACKGROUND_COLOR)
         display.blit(title_surface, (screenWidth / 2 - title_surface.get_width() / 2, title_y))
         display.blit(instr_surface, (screenWidth / 2 - instr_surface.get_width() / 2, instr_y))
         player.draw()
         gameType.draw()
         timeLimit.draw()
-        # Zeichne KI-Auswahl, falls nötig
         if gameType.getValue() == "human_ai":
             opponent_button_width = 150
             opponent_group_left = screenWidth / 2 - (opponent_button_width * 3 + spacing * 2) / 2
@@ -272,7 +252,6 @@ def homePage(game, display):
             aiSelection.draw()
         start.draw(12, 12, 12, 12)
         quitbtn.draw(12, 12, 12, 12)
-        # Zeige Custom-Time Eingabefeld, falls aktiv
         if timeLimit.getValue() == "custom":
             input_box = pygame.Rect(screenWidth / 2 - 50, custom_input_y, 100, 40)
             pygame.draw.rect(display, consts.WHITE, input_box, 2)
