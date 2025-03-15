@@ -1,0 +1,15 @@
+Minimax_depth2 (red) vs MCTS (blue) | Winner: red | red moves: 13, blue moves: 12 | red time: 70.76s, blue time: 85.01s
+Minimax_depth2 (red) vs MCTS (blue) | Winner: red | red moves: 14, blue moves: 13 | red time: 74.55s, blue time: 88.38s
+Minimax_depth2 (red) vs MCTS (blue) | Winner: red | red moves: 11, blue moves: 10 | red time: 61.73s, blue time: 72.59s
+Minimax_depth2 (red) vs MCTS (blue) | Winner: red | red moves: 12, blue moves: 11 | red time: 66.42s, blue time: 80.49s
+Minimax_depth2 (red) vs MCTS (blue) | Winner: red | red moves: 13, blue moves: 12 | red time: 71.36s, blue time: 85.90s
+Random (red) vs MCTS (blue) | Winner: blue | red moves: 57, blue moves: 57 | red time: 0.00s, blue time: 156.95s
+Random (red) vs MCTS (blue) | Winner: red | red moves: 56, blue moves: 55 | red time: 0.00s, blue time: 156.80s
+Random (red) vs MCTS (blue) | Winner: red | red moves: 55, blue moves: 54 | red time: 0.00s, blue time: 163.29s
+Random (red) vs MCTS (blue) | Winner: blue | red moves: 55, blue moves: 55 | red time: 0.00s, blue time: 163.10s
+Random (red) vs MCTS (blue) | Winner: red | red moves: 53, blue moves: 52 | red time: 0.00s, blue time: 147.76s
+Random (red) vs Minimax_depth2 (blue) | Winner: blue | red moves: 11, blue moves: 11 | red time: 0.00s, blue time: 62.36s
+Random (red) vs Minimax_depth2 (blue) | Winner: blue | red moves: 12, blue moves: 12 | red time: 0.00s, blue time: 68.37s
+Random (red) vs Minimax_depth2 (blue) | Winner: blue | red moves: 12, blue moves: 12 | red time: 0.00s, blue time: 67.57s
+Random (red) vs Minimax_depth2 (blue) | Winner: blue | red moves: 18, blue moves: 18 | red time: 0.00s, blue time: 87.66s
+Random (red) vs Minimax_depth2 (blue) | Winner: blue | red moves: 11, blue moves: 11 | red time: 0.00s, blue time: 62.60s
