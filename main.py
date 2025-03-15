@@ -1,3 +1,4 @@
+# Version 1.0
 import consts
 import pygame
 import sys
