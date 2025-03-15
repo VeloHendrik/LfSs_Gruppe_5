@@ -93,7 +93,7 @@ class MCTSAgent:
 
     def rollout(self, state, player):
         current_state = state.clone()
-        rollout_depth = 10  # Maximale Tiefe für Rollouts
+        rollout_depth = 20  # Maximale Tiefe für Rollouts
         depth = 0
         epsilon = 0.2  # Wahrscheinlichkeit für einen rein zufälligen Zug
         while not current_state.is_terminal() and depth < rollout_depth:
