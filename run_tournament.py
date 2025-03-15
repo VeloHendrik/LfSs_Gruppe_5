@@ -33,11 +33,9 @@ def play_match(agent_red, agent_blue):
             tile = game.grid.tiles[(x, y)]
             tile.colour = game.playerColours[game.current_player]
             
-            # Die Simulation des Zeitverbrauchs wurde entfernt.
         else:
             return 'draw', kpi
         
-        # Überprüfe, ob ein Spieler gewonnen hat.
         if game.findSolutionPath() is not None:
             return game.current_player, kpi
         
